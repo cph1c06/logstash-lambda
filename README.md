@@ -60,6 +60,12 @@ Replace `<your_logstash_hostname>` with the hostname for your Logstash server.
 
 You can optionally change the structured metadata. The metadata is merged to all the log events sent by the Lambda script.
 
+- **TLS certification**
+```
+s = ssl.wrap_socket(s, ca_certs="./ca.crt", cert_reqs=ssl.CERT_REQUIRED, certfile="./client_signed.crt", keyfile="./client.key", ssl_version=ssl.PROTOCOL_TLSv1_2)
+```
+You can optionally import the CA certification(ca.crt), Client key(client.key) and CA signed client certification(client_signed.crt) to enable TLS authentication and encryption.
+
 ## 4. Handler role
 
 To allow access to the S3 objects you must define a S3 execution role and assign it to the Lambda function.
