@@ -38,7 +38,7 @@ def lambda_handler(event, context):
 
     port = raw_port
     if enable_security:
-        s = ssl.wrap_socket(s)
+        s = ssl.wrap_socket(s, ca_certs="./ca.crt", cert_reqs=ssl.CERT_REQUIRED, certfile="./client_signed.crt", keyfile="./client.key", ssl_version=ssl.PROTOCOL_TLSv1_2)
         port = ssl_port
 
     s.connect((host, port))
