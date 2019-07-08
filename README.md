@@ -10,6 +10,7 @@ AWS lambda function to ship ELB, S3, CloudTrail, VPC, CloudFront and CloudWatch 
 - SSL Security
 - JSON events providing details about S3 documents forwarded
 - Structured meta-information can be attached to the events
+- Add tls authentication and encryption features with logstash
 
 # Quick Start
 
